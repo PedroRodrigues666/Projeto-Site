@@ -1,37 +1,118 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-BR">
 <head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./estilo.css">
-<title>Projeto site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azrael</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
+<header>
+        <div class="header-content">
+        
+            <nav>
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Gallery">Gallery</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                    <li><a href="#Shop">Shop</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 <body>
     
-<header>AZRAEL</header>
+
+
+
+
+    <div class="espiral">
+        <img src="imagens/planodefundoespiral3.png" alt="Imagem de fundo" class="espiral-imagem">
+        <h1>Azrael</h1>
+    </div>
+
+    <div class="frasemorte">
+        <h2>"Tudo tem um começo e um fim e o tempo leva todas as coisas.</h2>
+        <h2> Nada que é levado pela morte volta a ser como era antes."</h2>
+        
+
+    </div>
+
+
+
+
+
+<section id="About">
+<div class="About">
+    <h2>ABOUT</h2>
+</div>
 
 <div class="container">
-<nav>
-    <ul>
-        <li>
-            <a href="index.html" >Home</a>
-        </li>
-        <li>
-            <a href="sobre.html">Sobre mim</a>
-        </li>
-        <li>
-            <a href="contatos.html">Contatos</a>
-        </li>
+    <!-- Imagem a ser alterada ainda -->
 
-    </ul>
+<div class="banner">
 
-</nav>
+    
+
+   <picture>
+    <!-- Imagem para telas pequenas (até 600px) -->
+    <source 
+        media="(max-width: 600px)"
+        srcset="imagens/azarelfotopeq.png 320w"
+    >
+    <!-- Imagem para telas médias (601px a 1024px) -->
+    <source 
+        media="(max-width: 1024px)"
+        srcset="imagens/azarelfotomed.png 480px"
+    >
+    <!-- Imagem padrão (desktop) -->
+    <img 
+        src="imagens/azarelfoto.png"
+        srcset="imagem-desktop-1200w.jpg 1200w"
+        alt="Azrael foto" class="fotoazrael"
+    >
+   </picture>
 </div>
+
+
+<div class="aboutext">
+
+    <h3>Azrael é um artista brasileiro nascido em Taquarituba-SP. 
+        Desde pequeno sempre teve amor pela arte e tudo que ela pode 
+        prporcioar de sentimetnos para as pessoas. Com o tempo aderiu
+        o gosto de por desenhos que buscam realismo, no qual se aperfeiçoou
+        e tomou como parte de sua vida. Apesar do realismo ser seu principal
+        ramo também faz trabalho em outro estilo.
+
+    </h3>
+</div>
+</div>
+</section>
+
+<section id="Gallery">
+
+<h2>Gallery</h2>
+
+<img src="imagens/o anjo.png" alt="O Anjo" width="400" height="500">
+
+<img src="imagens/A dama.png" alt="O Anjo" width="400" height="500">
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
 
 
 
 
 
 </body>
+</html>
