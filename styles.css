@@ -1,3 +1,11 @@
+:root {
+    --primary-color: #1b1b1b;
+    --secondary-color: #2c2c2c;
+    --accent-color: #8b0000; 
+    --text-color: #ffffff;
+    --text-secondary: #cccccc;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,51 +13,86 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1b1b1b;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 header {
-    background-color: #111111;
-    color: #fff;
-    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-  
+    padding: 0 2rem;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 15px;
+    margin: 0 1.5rem;
 }
 
 nav ul li a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
 }
 
 .espiral {
     position: relative;
     text-align: center;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .espiral-imagem {
     width: 100%;
-    height: auto;
+    height: 80vh;
+    object-fit: cover;
     display: block;
+    filter: brightness(0.7);
 }
 
 .espiral h1 {
@@ -57,98 +100,211 @@ nav ul li a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3em;
-    padding: 10px 20px;
-    border-radius: 10px;
-    
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease;
 }
 
 .frasemorte {
     text-align: center;
-    margin: 20px 0;
+    padding: 3rem 1rem;
+    background-color: var(--secondary-color);
+}
+
+.frasemorte blockquote {
     font-style: italic;
-    color:#fff;
-    padding:50px;
-
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: var(--text-secondary);
 }
 
-section#About {
-    padding: 20px;
-    background-color: #2c2c2c;
-    margin: 20px 0;
-    
-}
-
-.About h2 {
+/* About Section */
+.section-header {
     text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: white;
-    
+    padding: 2rem 0;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.about-section {
+    background-color: var(--secondary-color);
+    padding: 2rem 0;
 }
 
 .container {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 3rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    color:white;
+    padding: 0 2rem;
 }
 
-.banner {
+.artist-portrait {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.artist-portrait:hover {
+    transform: scale(1.02);
+}
+
+.about-content {
     flex: 1;
 }
 
-.fotoazrael {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.aboutext {
-    flex: 2;
-}
-
-.aboutext h3 {
-    font-size: 1.2em;
+.about-content p {
+    font-size: 1.1rem;
     line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
 }
 
+/* Gallery Section */
+.gallery-section {
+    padding: 4rem 0;
+}
 
-@media screen and(max-width:600px) {
-    .banner {
-        background-image: url('.imagens/fotoazraelpeq.png');
-        height: 50vh;
-        }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
-@media screen and(max-width:1600px) {
-    .banner {
-        background-image: url('.imagens/fotoazrael.png');
-        
-        }
+
+.artwork {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
+
+.artwork:hover {
+    transform: translateY(-10px);
+}
+
+.artwork img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.artwork:hover img {
+    transform: scale(1.05);
+}
+
+.artwork figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.social-links {
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+   
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
     
+}
 
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 /* Responsividade */
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .espiral h1 {
+        font-size: 2.5rem;
+    }
+    
+    .frasemorte blockquote {
+        font-size: 1.2rem;
+    }
+    
     .container {
         flex-direction: column;
         text-align: center;
     }
+    
+    .artist-portrait {
+        max-width: 100%;
+    }
+    
+    nav ul li {
+        margin: 0 0.8rem;
+    }
+}
 
+@media (max-width: 480px) {
     .espiral h1 {
-        font-size: 2em;
+        font-size: 2rem;
     }
-
-    .frasemorte h2 {
-        font-size: 1.2em;
+    
+    nav ul li {
+        margin: 0.5rem;
     }
-
-    .aboutext h3 {
-        font-size: 1em;
+    
+    .section-header h2 {
+        font-size: 1.8rem;
     }
 }
