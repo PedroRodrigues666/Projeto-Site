@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function carregarMateriais() {
+    const jsonData = '{"folha": "Tilibra", "gramatura": 150, "tecnica": "Grafite"}';
+    const materiais = JSON.parse(jsonData);
+    document.getElementById("Materiais").innerText = `Especificações: ${materiais.folha}, ${materiais.gramatura}g, ${materiais.tecnica}`;
+}
+
 
 
 
