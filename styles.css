@@ -77,6 +77,7 @@ nav ul li a:hover::after {
 }
 
 /* Hero Section */
+
 .hero {
     position: relative;
 }
@@ -86,6 +87,23 @@ nav ul li a:hover::after {
     text-align: center;
     color: var(--text-color);
 }
+
+.icon-instagram {
+  margin-top: 10px;
+}
+
+.icon-instagram img {
+  width: 65px;
+  height: 65px;
+  filter: brightness(0) invert(1); 
+  transition: transform 0.3s ease;
+}
+
+.icon-instagram img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.5);
+}
+
 
 .espiral-imagem {
     width: 100%;
@@ -122,7 +140,9 @@ nav ul li a:hover::after {
     color: var(--text-secondary);
 }
 
+
 /* About Section */
+
 .section-header {
     text-align: center;
     padding: 2rem 0;
@@ -264,6 +284,115 @@ footer {
     color: var(--accent-color);
     
 }
+
+
+/* Shop section */
+
+.shop-section {
+    background-color: var(--secondary-color);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.vermais-container {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.vermais-container button {
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.vermais-container button:hover {
+    background-color: #a40000;
+}
+
+#folhas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.folha-box {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: 1rem;
+    max-width: 250px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+   
+}
+
+.folha-box:hover {
+    transform: translateY(-8px);
+}
+
+.folha-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+
+.folha-box .descricao {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.folha-box.hidden {
+    display: none;
+}
+
+
+
+.encomenda-section{
+    padding: 2rem;
+    background-color: #292525;
+}
+
+.form-encomenda {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+max-width: 500px;
+margin: 0 auto;
+}
+
+
+.form-encomenda input,
+.form-encomenda select,
+.form-encomenda button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius:9px;
+    border: 1px solid #ccc;
+}
+
+.form-encomenda button{
+
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+.form-encomenda button:hover{
+    background-color: #1b1b1b;
+}
+
+
+
 
 /* Animations */
 @keyframes fadeIn {

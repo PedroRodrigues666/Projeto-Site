@@ -7,7 +7,7 @@
     <title>Azrael - Artista Realista</title>
     <link rel="stylesheet" href="styles.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
 </head>
 <body>
     <header>
@@ -17,7 +17,6 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">Sobre</a></li>
                     <li><a href="#gallery">Galeria</a></li>
-                    <li><a href="#contact">Contato</a></li>
                     <li><a href="#shop">Loja</a></li>
                 </ul>
             </nav>
@@ -29,7 +28,15 @@
             <div class="espiral">
                 <img src="imagens/planodefundoespiral3.png" alt="Fundo espiral abstrato" class="espiral-imagem">
                 <h1>Azrael</h1>
+                <div class="icon-instagram">
+                <a href="https://www.instagram.com/_azrael_art/" target="_blank">
+                
+                <img src="imagens/instagram.png" alt="Instagram">
+                </a>
             </div>
+            </div>
+
+            
 
             <div class="frasemorte">
                 <blockquote>
@@ -77,14 +84,103 @@
 
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://www.instagram.com/_azrael_art/" aria-label="Instagram"> <i class="fab fa-instagram "></i></a>
-                <!-- colocar mais redes aqui depois -->
-            </div>
-            <p>&copy; 2023 Azrael Art. Todos os direitos reservados.</p>
+
+    <section id="shop" class="shop-section">
+        <div class="section-header">
+            <h2>Tamanhos e Preços</h2>
         </div>
+
+        <div class="vermais-container">
+            <button id="toggle-folhas">Veja mais</button>
+        </div>
+
+        <div class="container-folhas" id="folhas-container">
+            <div class="folha-box folha">
+            <img src="imagens/tamanhoa0.jpg" alt="Folha A0">
+            <div class="descricao">Folha A0 - R$ 350,00</div>
+        </div> 
+
+        <div class="folha-box folha">
+            <img src="imagens/tamanhoa1.jpg" alt="Folha A1">
+            <div class="descricao">Folha A1 - R$ 200,00</div>
+        </div> 
+
+        <div class="folha-box folha">
+            <img src="imagens/tamanhoa2.jpg" alt="Folha A2">
+            <div class="descricao">Folha A2 - R$ 180,00</div>
+        </div> 
+
+        <div class="folha-box folha">
+            <img src="imagens/tamanhoa3.jpg" alt="Folha A3">
+            <div class="descricao">Folha A3 - R$ 150,00</div>
+        </div>
+
+        <div class="folha-box folha">
+            <img src="imagens/tamanhoa4.jpg" alt="Folha A4">
+            <div class="descricao">Folha A4 - R$ 100,00</div>
+        </div> 
+
+        </div>
+        </section>
+
+
+        <section id="encomenda" class="encomenda-section">
+            <div class="section-header">
+                <h2>Fila de encomendas</h2>
+                
+            </div>
+        <form action="https://webhook.site/5daa6d74-683f-45b0-a3cf-38e219e45057" method="POST" class="form-encomenda">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" required />
+
+            <label for="nome">E-mail</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone"  placeholder="(99)99999-9999" required /> 
+            
+            <label for="nome">Endereço</label>
+            <input type="text" id="endereco" name="endereco" required />
+
+            <label for="nome">Cidade</label>
+            <input type="text" id="cidade" name="cidade" required />
+            
+            <label for="estado">Estado</label>
+            <select id="estado" name="estado" required>
+                <option value="">Selecione o estado</option>
+                <option value="SP">São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="RS">Rio Grande do Sul</option>
+            </select>
+
+
+            <label for="folha">Tipo de Folha</label>
+            <select id="folha" name="folha" required>
+                <option value="">Selecione o tamanho</option>
+                <option value="A0">A0 - R$ 350,00</option>
+                <option value="A1">A1 - R$ 250,00</option>
+                <option value="A2">A2 - R$ 200,00</option>
+                <option value="A3">A3 - R$ 150,00</option>
+                <option value="A4">A4 - R$ 100,00</option>
+            </select>
+
+    <button type="submit">Entrar na Fila</button>
+            
+
+        </form>
+
+        </section>
+        
+    <script src="script.js"></script>
+
+
+    <footer>
+
+        <div class="footer-content">
+             <p>&copy; 2023 Azrael Art. Todos os direitos reservados.</p>
+        </div>
+        
     </footer>
 </body>
 </html>
